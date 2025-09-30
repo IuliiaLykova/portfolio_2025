@@ -28,7 +28,8 @@
 	width: 100%;
 	max-width: 38rem;
 	border-radius: 50%;
-	height: auto;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
 }
 
 .hero .hero__container {
@@ -37,6 +38,7 @@
 	width: 100%;
 	max-width: var(--max-width);
 	gap: 8rem;
+	align-items: center;
 }
 
 .hero .hero__text {
@@ -73,10 +75,9 @@
 	.hero .hero__container {
 		display: flex;
 		max-width: 100%;
-		gap: 0;
+		gap: 2rem;
 		flex-direction: column-reverse;
 		justify-content: center;
-		align-items: center;
 	}
 	.hero .text__content {
 		align-items: center;
