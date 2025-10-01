@@ -110,6 +110,12 @@ h1, h2  {
   font-family: "Newsreader", serif;
 }
 
+@media screen and (max-width:768px) {
+  h2 {
+    text-align: center;
+  }
+}
+
 html {
     font-family: var(--font-montserrat) !important;
     font-size: 62.5%;
@@ -124,6 +130,10 @@ body {
 
 main {
     align-self: center;
+}
+
+section {
+  padding: 1rem;
 }
 
 p {

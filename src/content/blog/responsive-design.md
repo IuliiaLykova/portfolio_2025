@@ -27,8 +27,10 @@ Mobile First bedeutet, dass man Websites zuerst für kleine Bildschirme entwicke
 ```
 
 ## Vorteile
-- Bessere Nutzererfahrung auf Smartphones  
-- Kürzere Ladezeiten  
-- Google bevorzugt mobilfreundliche Websites  
+Bessere Nutzererfahrung auf Smartphones  
+Kürzere Ladezeiten  
+Google bevorzugt mobilfreundliche Websites  
+
+&nbsp; 
 
 👉 Fazit: Wer heute Websites entwickelt, sollte Mobile First immer im Kopf haben.

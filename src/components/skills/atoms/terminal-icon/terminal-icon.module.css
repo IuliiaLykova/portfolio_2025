@@ -1,30 +1,37 @@
 .base {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: min-content;
+    color: var(--icon-color);
 }
-.base {
-	width: min-content;
-	color: var(--icon-color);
+
+.skill {
+    transition: all .3s ease-in-out;
+
 }
-.icon {
-	font-size: 7rem;
+
+.skill:hover {
+    transform: scale(0.9) rotate(1deg);
+
 }
 
 .name {
-	font-size: var(--text-general);
+    font-size: var(--text-general);
 }
+
 .icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	background-color: currentColor;
-	-webkit-mask-image: var(--svg);
-	mask-image: var(--svg);
-	-webkit-mask-repeat: no-repeat;
-	mask-repeat: no-repeat;
-	-webkit-mask-size: 100% 100%;
-	mask-size: 100% 100%;
+    font-size: 7rem;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }

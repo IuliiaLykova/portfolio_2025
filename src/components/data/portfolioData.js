@@ -18,10 +18,10 @@
 export const portafolioData = [
 	{
 		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
-		title: 'Ресторан',
+		title: 'Restaurant',
 		skills: ['React', 'StyledComponents'],
 		descripcion:
-			'Сайт ресторана с адаптивным дизайном и удобной навигацией.',
+			'Restaurant-Website mit responsivem Design und benutzerfreundlicher Navigation. Link bald verfügbar.',
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-right',
@@ -31,7 +31,7 @@ export const portafolioData = [
 		title: 'Интернет-магазин',
 		skills: ['JavaScript', 'Bootstrap'],
 		descripcion:
-			'Демонстрационный e-commerce проект: каталог товаров, корзина, адаптивная верстка.',
+			'Demo E-Commerce-Projekt: Produktkatalog, Warenkorb, responsive Umsetzung. Link bald verfügbar.',
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-up',
@@ -42,7 +42,7 @@ export const portafolioData = [
 		title: 'Кофейня',
 		skills: ['React', 'CSS'],
 		descripcion:
-			'Сайт кофейни с разделами меню, акций и контактной информацией.',
+			'Café-Website mit Menüseiten, Angeboten und Kontaktinformationen. Link bald verfügbar.',
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-left',

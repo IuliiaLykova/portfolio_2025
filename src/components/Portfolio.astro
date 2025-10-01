@@ -11,7 +11,7 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	<div class="portfolio__container">
 		<Title contenido="Portfolio" />
 		<div class="portfolio__elements">
-			{getPortafolioData.map((props) => <Card {...props} />)}
+			{getPortafolioData.slice(0, 3).map((props) => <Card {...props} />)}
 		</div>
 	</div>
 </section>

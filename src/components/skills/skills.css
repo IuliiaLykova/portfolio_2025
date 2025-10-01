@@ -17,6 +17,7 @@
 
 #skills .text-content ul {
     list-style: none;
+    padding-left: 1rem;
 }
 
 #skills .text-content ul li {

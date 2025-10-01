@@ -42,7 +42,7 @@
 }
 
 .hero .hero__text {
-	font-size: var(--text-xx-large);
+	font-size: var(--text-large);
 }
 
 .hero__container .text__content {
@@ -59,7 +59,7 @@
 }
 
 .hero__container .hero__title p {
-	font-size: var(--text-x-large);
+	font-size: var(--text-large);
 	font-weight: normal;
 	color: var(--primary-90);
 	max-width: 80%;
@@ -84,7 +84,7 @@
 	}
 
 	.hero .hero__text {
-		font-size: var(--text-x-large);
+		font-size: var(--text-large);
 		text-align: center;
 	}
 }
