@@ -31,6 +31,8 @@ const { Content } = await post.render();
 		width: 100%;
 		max-width: 80rem;
 		min-width: 27rem;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
 	}
 	h2,
 	h3,
@@ -56,9 +58,9 @@ const { Content } = await post.render();
 		margin: 3rem 0;
 		border-radius: 0.5rem;
 	}
-	@media screen and (max-width:768px){
-		h2{
-			font-size:2rem;
+	@media screen and (max-width: 768px) {
+		h2 {
+			font-size: 2rem;
 		}
 	}
 </style>
