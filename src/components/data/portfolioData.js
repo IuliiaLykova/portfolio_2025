@@ -17,7 +17,7 @@
  */
 export const portafolioData = [
 	{
-		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
+		imgSrc: '../img/portfolio/1.jpeg',
 		title: 'Restaurant',
 		skills: ['React', 'StyledComponents'],
 		descripcion:
@@ -28,7 +28,7 @@ export const portafolioData = [
 	},
 	{
 		imgSrc: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/299377097/original/7eb7dcebe244fcf5ad75d92b0969fc116946bd57/create-professional-amd-responsive-wordpress-website.jpg',
-		title: 'Интернет-магазин',
+		title: 'E-Commerce',
 		skills: ['JavaScript', 'Bootstrap'],
 		descripcion:
 			'Demo E-Commerce-Projekt: Produktkatalog, Warenkorb, responsive Umsetzung. Link bald verfügbar.',
@@ -39,7 +39,7 @@ export const portafolioData = [
 	},
 	{
 		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
-		title: 'Кофейня',
+		title: 'Coffee Shop',
 		skills: ['React', 'CSS'],
 		descripcion:
 			'Café-Website mit Menüseiten, Angeboten und Kontaktinformationen. Link bald verfügbar.',

@@ -4,7 +4,17 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
+/* .about::before {
+	content: '';
+	position: absolute;
+	height: 6rem;
+	width: 100%;
+	background: linear-gradient(0deg, var(--site-bg), #00000000);
+	top: -6rem;
+} */
 
 .about__container {
     display: flex;
@@ -13,6 +23,7 @@
     justify-content: space-around;
     gap: 4.4rem;
     align-items: center;
+    
 }
 
 .about__img {
@@ -34,6 +45,10 @@
     max-width: 75rem;
     gap: 2.1rem;
     justify-content: center;
+    background: var(--site-bg-tr);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
 }
 
 .about__text {

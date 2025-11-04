@@ -1,71 +1,59 @@
+/* === CORE BASE COLORS === */
 :root {
-    /* color  */
-    --primary-0: #190230;
-    --primary-10: #2b1560;
-    --primary-20: #442288;
-    --primary-30: #5529ae;
-    --primary-40: #6632cf;
-    --primary-50: #7644e3;
-    --primary-60: #8664ee;
-    --primary-70: #a491f4;
-    --primary-80: #c2b9f9;
-    --primary-90: #dcd8fc;
-    --primary-95: #edeafd;
-    --primary-99: #f4f4fe;
-    --primary-100: #ffffff;
-    --secondary-0: #1c050e;
-    --secondary-10: #490e25;
-    --secondary-20: #782344;
-    --secondary-30: #87224a;
-    --secondary-40: #ae285f;
-    --secondary-50: #c93978;
-    --secondary-60: #dc5898;
-    --secondary-70: #e77fb4;
-    --secondary-80: #f1b0d3;
-    --secondary-90: #f7d3e7;
-    --secondary-95: #fae9f3;
-    --secondary-99: #fcf3f8;
-    --secondary-100: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+  --red: #77030c;
+  --grey: #343436;
+  --peach: #ffc8cd;
+  --primary: var(--red);
 
-    /* colores de las propiedades */
-    --surface: #4F4360;
-    --surface-variant: #e0d8e7;
-    --surface-dim: #998da9;
-    --surface-bridge: #d6cdee;
 
-    --primary: var(--primary-60);
-    --on-surface-primary: var(--primary-10);
-    --on-primary: var(--primary-95);
+  --font-montserrat: 'Montserrat', sans-serif;
+  --max-width: 108rem;
+  --text-small: 1.2rem;
+  --text-medium: 1.4rem;
+  --text-large: 1.6rem;
+  --text-x-large: 2rem;
+  --text-xx-large: 3.1rem;
+  --text-xxx-large: 4.4rem;
+  --text-title: 2rem;
+  --text-general: 1.6rem;
+  --text-button: 1.2rem;
 
-    --secndary: var(--secondary-70);
-    --on-surface-secondary: var(--secondary-95);
-    --on-secondary: var(--secondary-95);
+  --transition: all 0.3s ease-in-out;
+}
 
-    /* texto  */
-    --text-small: 1.2rem;
-    --text-medium: 1.4rem;
-    --text-large: 1.6rem;
-    --text-x-large: 2rem;
-    --text-xx-large: 3.1rem;
-    --text-xxx-large: 4.4rem;
-    --text-title: 2rem;
-    --text-general: 1.6rem;
-    --text-button: 1.2rem;
-    --font-montserrat: 'Montserrat', sans-serif;
-    --max-width: 108rem;
-    --site-bg: var(--primary-0);
-    --hero-bg: linear-gradient(-54deg,
-            var(--primary-0) -23%,
-            var(--primary-20),
-            var(--primary-0) 51%);
+/* ================= LIGHT THEME ================= */
+[data-theme="light"] {
+  --site-bg: var(--white);
+  --secondary: var(--grey);
+  --color: var(--black);
+  --site-bg-tr: #ffffff40;
+  
 
-    --text-gradient: radial-gradient(circle farthest-corner at center center,
-            #58f9ff 0%,
-            #df44e7 100%);
+
+
+  --header-bg: url('img/petals/main_bg.jpg');
+  --text-gradient: radial-gradient(circle farthest-corner at center center,
+      var(--black) 0%,
+      var(--peach) 100%);
+}
+
+/* ================= DARK THEME ================= */
+[data-theme="dark"] {
+  --site-bg: var(--black);
+  --secondary: var(--grey);
+  --color: var(--white);
+  --site-bg-tr: #00000040;
+
+  --header-bg: url('img/petals/main_bg_dark.jpg');
+  --text-gradient: radial-gradient(circle farthest-corner at center center,
+      var(--white) 0%,
+      var(--peach) 100%);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* === Passions Conflict === */
@@ -106,10 +94,33 @@
 
 /* === Шрифты === */
 
-h1, h2  {
+h1,
+h2,h3,h4,h5,h6 {
   font-family: "Newsreader", serif;
 }
+h1 {
+  font-size: clamp(3.2rem, 5vw + 1rem, 6rem);
+}
 
+h2 {
+  font-size: clamp(2.4rem, 3vw + 0.8rem, 4.2rem);
+}
+
+h3 {
+  font-size: clamp(1.8rem, 2vw + 0.6rem, 3.2rem);
+}
+
+h4 {
+  font-size: clamp(1.6rem, 1.5vw + 0.5rem, 2.4rem);
+}
+
+h5 {
+  font-size: clamp(1.4rem, 1vw + 0.4rem, 1.8rem);
+}
+
+h6 {
+  font-size: clamp(1.2rem, 0.8vw + 0.3rem, 1.6rem);
+}
 @media screen and (max-width:768px) {
   h2 {
     text-align: center;
@@ -117,55 +128,267 @@ h1, h2  {
 }
 
 html {
-    font-family: var(--font-montserrat) !important;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-family: var(--font-montserrat) !important;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    background: var(--site-bg) no-repeat;
-	padding: 1rem;	
+  width: 100%;
+  background: var(--site-bg) no-repeat;
+  /* padding: 1rem; */
+  position: relative;
+
 }
 
+body:after {
+  content: "";
+  background: var(--header-bg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-size: contain;
+  /* width: 100%; */
+  z-index: -1;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+
 main {
-    align-self: center;
+  align-self: center;
 }
 
 section {
   padding: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 p {
-    color: var(--primary-100);
-    font-size: var(--text-general);
-	font-weight: 400;
+  color: var(--color);
+  font-size: var(--text-general);
+  font-weight: 400;
+    text-shadow: 0 0 30px var(--site-bg);
+
 }
 
 .color__gradiente {
-    background: var(--text-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .max__width {
-    max-width: 117.8rem;
+  max-width: 117.8rem;
 }
 
 code {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 code .line {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 
 }
 
-button {
-	margin-bottom: 20px;
+
+.button {
+  margin-bottom: 20px;
+  color: var(--white);
+  background: var(--primary);
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  padding: 1.1rem 2.2rem;
+  border-radius: 100px;
+  font-size: var(--text-large);
+  transition: var(--transition);
+
+}
+
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--color) .5rem .5rem 1rem;
+}
+
+.button:active {
+  opacity: 0.5;
+}
+
+
+
+
+/* ===== Падающие лепестки ===== */
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* чтобы не мешали кликам */
+  overflow: hidden;
+  z-index: 0;
+  /* если надо выше hero — подними */
+}
+
+.petal {
+  position: absolute;
+  top: -10vh;
+  /* старт чуть выше экрана */
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fall 9s linear infinite, sway 3.5s ease-in-out infinite;
+  opacity: 0.8;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .12));
+}
+
+/* три варианта картинок */
+.petal:nth-child(3n+1) {
+  background-image: url("/img/petals/1.png");
+}
+
+.petal:nth-child(3n+2) {
+  background-image: url("/img/petals/2.png");
+}
+
+.petal:nth-child(3n) {
+  background-image: url("/img/petals/3.png");
+}
+
+/* разные позиции и размеры */
+.p1 {
+  left: 5%;
+  animation-duration: 10s;
+  animation-delay: 0s;
+  transform-origin: left top;
+}
+
+.p2 {
+  left: 15%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+  width: 55px;
+  height: 55px;
+}
+
+.p3 {
+  left: 25%;
+  animation-duration: 8s;
+  animation-delay: 2.2s;
+  width: 80px;
+  height: 80px;
+}
+
+.p4 {
+  left: 35%;
+  animation-duration: 12s;
+  animation-delay: .5s;
+}
+
+.p5 {
+  left: 45%;
+  animation-duration: 9.5s;
+  animation-delay: 1.4s;
+  width: 60px;
+  height: 60px;
+}
+
+.p6 {
+  left: 55%;
+  animation-duration: 13s;
+  animation-delay: 2.8s;
+}
+
+.p7 {
+  left: 65%;
+  animation-duration: 10.5s;
+  animation-delay: .8s;
+}
+
+.p8 {
+  left: 75%;
+  animation-duration: 9s;
+  animation-delay: 1.7s;
+  width: 50px;
+  height: 50px;
+}
+
+.p9 {
+  left: 85%;
+  animation-duration: 14s;
+  animation-delay: 3.2s;
+}
+
+.p10 {
+  left: 92%;
+  animation-duration: 11.5s;
+  animation-delay: 2s;
+  width: 65px;
+  height: 65px;
+}
+
+.p11 {
+  left: 30%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+.p12 {
+  left: 60%;
+  animation-duration: 12s;
+  animation-delay: 3.6s;
+}
+
+/* падение вниз */
+@keyframes fall {
+  0% {
+    top: -10vh;
+  }
+
+  100% {
+    top: 110vh;
+    /* чуть ниже, чтобы не обрывалось */
+  }
+}
+
+/* покачивание из стороны в сторону по дуге */
+@keyframes sway {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(15px) rotate(8deg);
+  }
+
+  50% {
+    transform: translateX(-10px) rotate(-6deg);
+  }
+
+  75% {
+    transform: translateX(12px) rotate(4deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* можно сделать поменьше на мобилках */
+@media (max-width: 768px) {
+  .petal {
+    width: 45px;
+    height: 45px;
+  }
 }

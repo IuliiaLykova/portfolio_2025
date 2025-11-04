@@ -1,17 +1,80 @@
 ---
 import Title from './atoms/Title.astro';
-import { getPortafolioData} from "../components/data/portfolioData.js"
+import { getPortafolioData } from '../components/data/portfolioData.js';
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
 <section
 	id="portafolio"
-	class="flex flex-col w-full  justify-center items-center h-auto min-h-[100dvh]  "
+	class="flex flex-col w-full justify-center items-center h-auto min-h-[100dvh]"
 >
 	<div class="portfolio__container">
-		<Title contenido="Portfolio" />
+		<Title class="title" contenido="Portfolio (Frontend Development)" />
 		<div class="portfolio__elements">
 			{getPortafolioData.slice(0, 3).map((props) => <Card {...props} />)}
+		</div>
+		<Title contenido="Portfolio (KI Artist)" />
+		<div class="portfolio__elements">
+			<h3>MidJourney</h3>
+			<div class="description">
+				<p>
+					Hier sind ein paar Beispiele dafür, wie ich mit KI arbeite.
+				</p>
+
+				<p>
+					Kann ich Kleidung virtuell an einem Modell anprobieren
+					lassen – mit Midjourney? Ja, das kann ich.
+				</p>
+			</div>
+			<div class="portfolio__card">
+				<img
+					src="../img/portfolio/mj_example.png"
+					alt="Rock, Sweater and Model"
+				/>
+				<div class="icon">=</div>
+
+				<video width="250" autoplay loop muted playsinline>
+					<source
+						src="../img/portfolio/model_sm.mp4"
+						type="video/mp4"
+					/>
+				</video>
+			</div>
+		</div>
+		<div class="portfolio__elements">
+			<h3>MidJourney und Runway</h3>
+			<div class="description">
+				<p>
+					Kann ich realistische oder animierte Videos und Bilder
+					erstellen? Auch das kann ich.
+				</p>
+
+				<p>
+					Hier sind zwei meiner YouTube-Kanäle – ein perfektes
+					Beispiel dafür, was ich kann. Sie zeigen, wie ich KI-Tools
+					kreativ einsetze und Content mit Persönlichkeit gestalte.
+				</p>
+			</div>
+			<div class="portfolio__card">
+				<a
+					href="https://www.youtube.com/@thesoundforestmusic"
+					target="_blank"
+					><img
+						src="../img/portfolio/yt_1.jpeg"
+						alt="medivial halloween town"
+					/></a
+				>
+
+				<a
+					href="https://www.youtube.com/@DancingBunnyMusic"
+					target="_blank"
+				>
+					<img
+						src="../img/portfolio/yt_2.jpg"
+						alt="dancing cartoon bear"
+					/>
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -24,6 +87,55 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		flex-wrap: wrap;
 		gap: 4rem;
 	}
+	.portfolio__elements .description,
+	.portfolio__container .title {
+		flex: 100%;
+	}
+	.portfolio__container .title {
+		margin: 2rem auto;
+	}
+
+	.portfolio__elements .description {
+		background: var(--site-bg-tr);
+		backdrop-filter: blur(8px);
+		border-radius: 20px;
+		padding: 30px;
+	}
+	.portfolio__card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+		justify-items: center;
+		align-items: center;
+		gap: 2rem;
+	}
+	.portfolio__card a {
+		border-radius: 20px;
+		overflow: hidden;
+		transition: var(--transition);
+	}
+	.portfolio__card a:hover {
+		transform: scale(0.95);
+	}
+	.portfolio__card a img {
+		transition: var(--transition);
+	}
+	.portfolio__card a:hover img {
+		transform: scale(1.2);
+	}
+	.portfolio__card .icon {
+		font-size: 30px;
+		text-align: center;
+		border: 2px solid var(--red);
+		display: flex;
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+		justify-self: center;
+		color: var(--color);
+	}
 </style>
 
 <script>
@@ -32,7 +144,7 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	const $cards = document.querySelectorAll('.card__portfolio');
 	$cards.forEach((card) => {
 		const $container = card.querySelector<HTMLDivElement>(
-			'.descripcion__container'
+			'.descripcion__container',
 		);
 		const $img = card.querySelector('img');
 		if (!$img || !$container) return;

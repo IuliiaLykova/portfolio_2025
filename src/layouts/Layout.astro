@@ -1,15 +1,15 @@
 ---
-import "../styles/global.css"
 interface Props {
 	title: string;
 }
 const { title } = Astro.props;
 import Header from '../components/header/Header.astro';
 import { mainMenu } from '../components/data/menuData.js';
+import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="de" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -23,11 +23,90 @@ import { mainMenu } from '../components/data/menuData.js';
 			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
-		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+		<script
+			src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+		></script>
 		<title>{title}</title>
-	</head>
-	<body class="flex flex-col">
+		<script is:inline>
+			const prefersDark = window.matchMedia?.(
+				'(prefers-color-scheme: dark)',
+			)?.matches;
+			const saved = localStorage.getItem('theme');
+			const html = document.documentElement;
 
-			<slot/>
+			// Устанавливаем стартовую тему
+			const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+			html.setAttribute('data-theme', initialTheme);
+
+			// Функция для обновления текста кнопки
+			function updateThemeButton() {
+				const btn = document.getElementById('themeToggle');
+				if (!btn) return;
+				const current = html.getAttribute('data-theme');
+				btn.textContent = current === 'dark' ? '◐' : '◑';
+			}
+
+			// Главная функция для переключения темы
+			window.__toggleTheme = () => {
+				const next =
+					html.getAttribute('data-theme') === 'dark'
+						? 'light'
+						: 'dark';
+				html.setAttribute('data-theme', next);
+				localStorage.setItem('theme', next);
+				updateThemeButton();
+			};
+
+			// Следим за изменением атрибута (если вдруг кто-то другой меняет тему)
+			const observer = new MutationObserver(updateThemeButton);
+			observer.observe(html, {
+				attributes: true,
+				attributeFilter: ['data-theme'],
+			});
+
+			// Устанавливаем текст при загрузке
+			window.addEventListener('DOMContentLoaded', updateThemeButton);
+		</script>
+	</head>
+
+	<body class="flex flex-col">
+		<!-- слой с лепестками -->
+		<div class="petals" aria-hidden="true">
+			<span class="petal p1"></span>
+			<span class="petal p2"></span>
+			<span class="petal p3"></span>
+			<span class="petal p4"></span>
+			<span class="petal p5"></span>
+			<span class="petal p6"></span>
+			<span class="petal p7"></span>
+			<span class="petal p8"></span>
+			<span class="petal p9"></span>
+			<span class="petal p10"></span>
+			<span class="petal p11"></span>
+			<span class="petal p12"></span>
+		</div>
+		<slot />
+<script is:inline>
+  const petals = document.querySelectorAll('.petal');
+
+  petals.forEach(petal => {
+    // функция для назначения глубины
+    const setDepth = () => {
+      const isBehind = Math.random() > 0.5;
+      petal.style.zIndex = isBehind ? -1 : 0;
+      petal.style.filter = isBehind 
+        ? 'blur(1.5px) brightness(0.85)' 
+        : 'blur(0) brightness(1)';
+      petal.style.opacity = isBehind ? '0.7' : '0.9';
+      
+    };
+
+    // первая установка
+    setDepth();
+
+    // при каждом новом падении
+    petal.addEventListener('animationiteration', setDepth);
+  });
+</script>
 	</body>
 </html>

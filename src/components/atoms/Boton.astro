@@ -4,27 +4,3 @@ const { href, texto } = Astro.props;
 ---
 
 <a class="primary button" href={href}>{texto}</a>
-
-<style>
-	.button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 1.1rem 2.2rem;
-		background: var(--primary);
-		border-radius: 100px;
-		font-size: var(--text-large);
-		transition: all 0.35s ease-in-out;
-		max-width: max-content;
-		color: var(--primary-90);
-		z-index: 1;
-	}
-	.button:hover {
-		transform: scale(1.05);
-		box-shadow: var(--primary-0) .5rem .5rem 1rem;
-		color: #000;
-	}
-	.button:active {
-		opacity: 0.5;
-	}
-</style>

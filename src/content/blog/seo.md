@@ -18,4 +18,6 @@ Eine Website ohne Besucher ist wie ein Schaufenster ohne Straße davor. SEO hilf
 <img src="bild.jpg" alt="Beispiel für ein optimiertes Bild">
 ```
 
+&nbsp;  
+
 👉 Schon kleine Optimierungen bringen oft große Wirkung.

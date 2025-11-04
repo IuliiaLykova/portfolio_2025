@@ -95,6 +95,8 @@ Hier sorgt CSS für das Design – und JavaScript für die Interaktion.
 
 Fazit
 
-Ob im Kundenprojekt oder im eigenen Portfolio: Design und Funktion gehören zusammen. Wer nur Code schreibt, aber das Styling vernachlässigt, liefert nur die halbe Arbeit.
+Ob im Kundenprojekt oder im eigenen Portfolio: Design und Funktion gehören zusammen. Wer nur Code schreibt, aber das Styling vernachlässigt, liefert nur die halbe Arbeit.#
+
+&nbsp;  
 
 👉 Sauberes CSS macht den Unterschied – es verwandelt eine Website von „funktional“ in „professionell“.

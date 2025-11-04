@@ -25,4 +25,6 @@ git commit -m "Meine Änderungen"
 git push origin main
 ```
 
+&nbsp;  
+
 👉 Mit diesen wenigen Befehlen hast du schon 80% des Alltags abgedeckt.

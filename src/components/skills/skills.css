@@ -13,6 +13,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 1.1rem;
+    background: var(--site-bg-tr);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
 }
 
 #skills .text-content ul {
@@ -31,7 +35,7 @@
     /* символ маркера */
     position: absolute;
     left: -1rem;
-    color: var(--primary-100);
+    color: var(--color);
     /* цвет точки (можно заменить) */
     font-weight: bold;
 }
