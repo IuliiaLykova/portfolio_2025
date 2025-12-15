@@ -1,5 +1,4 @@
 ---
-import Title from './atoms/Title.astro';
 import { getPortafolioData } from '../components/data/portfolioData.js';
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
@@ -9,11 +8,11 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	class="flex flex-col w-full justify-center items-center h-auto min-h-[100dvh]"
 >
 	<div class="portfolio__container">
-		<Title class="title" contenido="Portfolio (Frontend Development)" />
+		<h2 class="color__gradiente title text-center">Portfolio (Frontend Development)</h2>
 		<div class="portfolio__elements">
 			{getPortafolioData.slice(0, 3).map((props) => <Card {...props} />)}
 		</div>
-		<Title contenido="Portfolio (KI Artist)" />
+		<h2 class="color__gradiente title margin-top text-center">Portfolio (KI Artist)</h2>
 		<div class="portfolio__elements">
 			<h3>MidJourney</h3>
 			<div class="description">
@@ -151,7 +150,7 @@ import Card from './card-portfolio/CardPortfolio.astro';
 
 		const setBg = () => {
 			const [rbgString] = getIMGAverageColor($img, 0.7);
-			$container.style.background = rbgString;
+			// $container.style.background = rbgString;
 		};
 		setBg();
 		$img.onload = setBg;

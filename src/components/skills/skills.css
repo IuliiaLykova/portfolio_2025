@@ -28,16 +28,21 @@
     position: relative;
     display: flex;
     align-items: center;
+    margin-bottom: .5rem;
 }
 
 #skills .text-content ul li::before {
-    content: "•";
-    /* символ маркера */
+    content: "";
     position: absolute;
     left: -1rem;
-    color: var(--color);
-    /* цвет точки (можно заменить) */
-    font-weight: bold;
+    width: 1px;
+    height: 70%;
+    background: var(--color);
+    transition: var(--transition);
+}
+
+#skills .text-content ul li:hover::before {
+    height: 100%;
 }
 
 @media screen and (max-width: 768px) {

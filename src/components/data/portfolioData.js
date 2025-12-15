@@ -18,12 +18,12 @@
 export const portafolioData = [
 	{
 		imgSrc: '../img/portfolio/1.jpeg',
-		title: 'Restaurant',
+		title: 'AI Fashion',
 		skills: ['React', 'StyledComponents'],
 		descripcion:
-			'Restaurant-Website mit responsivem Design und benutzerfreundlicher Navigation. Link bald verfügbar.',
-		demoURL: '',
-		repoURL: '',
+			'AI Fashion-Website mit responsivem Design, Sprachwechsel benutzerfreundlicher Navigation.',
+		demoURL: 'https://iuliialykova.github.io/ai-fashion/',
+		repoURL: 'https://github.com/IuliiaLykova/ai-fashion/tree/main/ai-fashion',
 		anim: 'fade-right',
 	},
 	{

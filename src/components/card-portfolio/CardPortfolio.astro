@@ -1,5 +1,6 @@
 ---
 import './card-portfolio.css';
+
 const {
 	title,
 	descripcion,
@@ -9,6 +10,10 @@ const {
 	demoURL,
 	averageBrightness,
 } = Astro.props;
+
+const hasRepo = !!repoURL;
+const hasDemo = !!demoURL;
+const hasAnyLink = hasRepo || hasDemo;
 ---
 
 <div class="card__portfolio">
@@ -23,7 +28,7 @@ const {
 	/>
 
 	<div class="descripcion__container">
-		<h2 class="card__title">{title}</h2>
+		<h3 class="card__title">{title}</h2>
 		<div class="descripcion">
 			<p>{descripcion}</p>
 
@@ -35,21 +40,31 @@ const {
 				}
 			</div>
 
-			<div class="buttons">
-				<a href={repoURL}>
-					<span>
-						Github
-						{(<iconify-icon icon="quill:link-out" />)}
-					</span>
-				</a>
+			{hasAnyLink ? (
+				<div class="buttons">
+					{hasRepo && (
+						<a href={repoURL} target="_blank" rel="noreferrer">
+							<span>
+								Github
+								<iconify-icon icon="quill:link-out" />
+							</span>
+						</a>
+					)}
 
-				<a href={demoURL}>
-					<span>
-						Demo
-						{(<iconify-icon icon="quill:link-out" />)}
-					</span>
-				</a>
-			</div>
+					{hasDemo && (
+						<a href={demoURL} target="_blank" rel="noreferrer">
+							<span>
+								Demo
+								<iconify-icon icon="quill:link-out" />
+							</span>
+						</a>
+					)}
+				</div>
+			) : (
+				<div class="coming-soon">
+					Coming soon
+				</div>
+			)}
 		</div>
 	</div>
 </div>
